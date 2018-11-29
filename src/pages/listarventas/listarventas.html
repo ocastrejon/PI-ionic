@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Ventas</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let venta of ventas" (click)="openDetalle(venta)">
+      <ion-avatar item-start>
+        <img src="https://www.marketingdirecto.com/wp-content/uploads/2013/02/carrito-de-la-compra.jpg">
+      </ion-avatar>
+      <h1>{{ venta.fecha }}</h1>
+      <h3>ID Cliente: {{venta.idcliente}}</h3>
+      <h2>ID Producto: {{venta.idproducto}}</h2>
+    </ion-item>
+    </ion-list>
+  
+    <ion-fab right bottom>
+      <button ion-fab color="primary" (click)="openModal()">
+        <ion-icon name="md-add"></ion-icon>
+      </button>
+    </ion-fab>
+      
+</ion-content>

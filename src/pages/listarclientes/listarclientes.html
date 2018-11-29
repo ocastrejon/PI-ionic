@@ -1,0 +1,35 @@
+<!--
+  Generated template for the ListarventasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Clientes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+        <ion-item *ngFor="let cliente of clientes" (click)="openDetalle(cliente)">
+            <ion-avatar item-start>
+              <img src="{{cliente.fotografia}}">
+            </ion-avatar>
+            <h1>{{cliente.nombre}}</h1>
+            <h3>Telefono: {{cliente.telefono}}</h3>
+            <h2>Correo: {{cliente.correo}}</h2>
+          </ion-item>
+      </ion-list>
+
+      <ion-fab right bottom>
+          <button ion-fab color="primary" (click)="openModal()"><ion-icon name="md-add"></ion-icon></button>
+        </ion-fab>
+      
+</ion-content>

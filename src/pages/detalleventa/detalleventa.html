@@ -1,0 +1,66 @@
+<!--
+  Generated template for the AgregarventaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Editar la venta</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="ActualizarCliente()">
+      <ion-icon  name="md-checkmark"></ion-icon>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form>
+      <ion-list>
+        <ion-item>
+          <ion-label>Fecha</ion-label>
+          <ion-input type="date" name="fecha" [(ngModel)]="venta.fecha"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+          <ion-label>Clientes</ion-label>
+          <ion-select multiple="false"  [(ngModel)]="venta.idcliente" [ngModelOptions]="{standalone: true}">
+                  <ion-option  *ngFor="let cliente of clientes" [value]="cliente.idcliente"  checked="false">{{cliente.nombre}}</ion-option>
+                </ion-select>
+            </ion-item>
+  
+            <ion-item>
+                <ion-label>Productos</ion-label>
+                <ion-select multiple="false" [(ngModel)]="venta.idproducto" [ngModelOptions]="{standalone: true}">
+                        <ion-option  *ngFor="let producto of productos" [value]="producto.idproducto" checked="false">{{producto.nombre}}</ion-option>
+                      </ion-select>
+                  </ion-item>
+      </ion-list>
+  
+      <ion-list radio-group name="tipo_venta" [(ngModel)]="venta.tipo_venta" [ngModelOptions]="{standalone: true}" required>
+          <ion-list-header>
+            Tipo de Venta
+          </ion-list-header>
+        
+          <ion-item>
+            <ion-label>de Contado</ion-label>
+            <ion-radio checked="true" value="Contado" ></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>en Abonos</ion-label>
+            <ion-radio value="Abonos" ></ion-radio>
+          </ion-item>
+        </ion-list>
+  <ion-list>
+    <ion-item>
+      <ion-label>Pagado</ion-label>
+      <ion-checkbox [(ngModel)]="venta.pagado" [ngModelOptions]="{standalone: true}"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+    </form>
+  </ion-content>
