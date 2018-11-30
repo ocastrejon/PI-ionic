@@ -1,7 +1,3 @@
-# Sales app
-
-This app take control of sales for you. Its just necessary to take a picture of whatever stuff that you  want to sell and describe it, such as price, name, etc. When the moments is coming to sell your product, simply describe who bought it.
-
 ## Getting Started
 To run the app in Android system:
 ```JavaScript
